@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>My Skills</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <style>
+    .skills-container {
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .skills-title {
+      font-size: 2.5em;
+      font-weight: 600;
+      color: #007bff;
+      margin-bottom: 30px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .skill-item {
+      background: #f4f4f9;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .skill-item:hover {
+      transform: translateY(-10px);
+    }
+
+    .skill-icon {
+      font-size: 2.5em;
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+
+    .skill-title {
+      font-size: 1.2em;
+      font-weight: 500;
+      color: #333;
+    }
+
+    /* Modal Content Styling */
+    .modal-body .skill-entry {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+    }
+
+    .modal-body .skill-icon {
+      width: 40px;
+      height: 40px;
+      margin-right: 15px;
+    }
+
+    .modal-body .skill-name {
+      font-size: 1.1em;
+      color: #333;
+      font-weight: 500;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- My Skills Section -->
+  <section class="skills-container">
+    <div class="container">
+      <div class="skills-title">My Skills</div>
+      <div class="skills-grid">
+        <!-- Languages -->
+        <div class="skill-item" onclick="showModal('Languages')">
+          <div class="skill-icon"><i class="fa fa-code"></i></div>
+          <div class="skill-title">Languages</div>
+        </div>
+
+        <!-- Frontend Frameworks and Libraries -->
+        <div class="skill-item" onclick="showModal('Frontend')">
+          <div class="skill-icon"><i class="fa fa-paint-brush"></i></div>
+          <div class="skill-title">Frontend Frameworks</div>
+        </div>
+
+        <!-- Backend Technologies -->
+        <div class="skill-item" onclick="showModal('Backend')">
+          <div class="skill-icon"><i class="fa fa-server"></i></div>
+          <div class="skill-title">Backend Technologies</div>
+        </div>
+
+        <!-- Database Management -->
+        <div class="skill-item" onclick="showModal('Database')">
+          <div class="skill-icon"><i class="fa fa-database"></i></div>
+          <div class="skill-title">Database Management</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modals -->
+  <div class="modal fade" id="skillModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="modalBody">
+          <!-- Skills Content will be dynamically added here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/popper/popper.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+
+  <script>
+    const skillsData = {
+      Languages: [
+        { name: "C", icon: "C:/project/EstateAgency/img/java.png" },
+        { name: "Java", icon: "path/to/java-logo.png" },
+        { name: "Python", icon: "path/to/python-logo.png" },
+        { name: "R", icon: "path/to/r-logo.png" },
+        { name: "TypeScript", icon: "path/to/typescript-logo.png" },
+        { name: "HTML", icon: "path/to/html-logo.png" },
+        { name: "CSS", icon: "path/to/css-logo.png" },
+        { name: "JavaScript", icon: "path/to/javascript-logo.png" }
+      ],
+      Frontend: [
+        { name: "React.js", icon: "path/to/react-logo.png" },
+        { name: "Tailwind CSS", icon: "path/to/tailwind-logo.png" },
+        { name: "Bootstrap", icon: "path/to/bootstrap-logo.png" },
+        { name: "Ant Design", icon: "path/to/ant-design-logo.png" }
+      ],
+      Backend: [
+        { name: "Flask", icon: "path/to/flask-logo.png" },
+        { name: "Spring Boot", icon: "path/to/spring-boot-logo.png" },
+        { name: "Node.js", icon: "path/to/node-logo.png" },
+        { name: "Express", icon: "path/to/express-logo.png" },
+        { name: "Strapi (CMS)", icon: "path/to/strapi-logo.png" }
+      ],
+      Database: [
+        { name: "MySQL", icon: "path/to/mysql-logo.png" },
+        { name: "PostgreSQL", icon: "path/to/postgresql-logo.png" },
+        { name: "MongoDB", icon: "path/to/mongodb-logo.png" }
+      ]
+    };
+
+    function showModal(category) {
+      const modalTitle = document.getElementById("modalLabel");
+      const modalBody = document.getElementById("modalBody");
+
+      modalTitle.textContent = category;
+      modalBody.innerHTML = ""; // Clear previous content
+
+      skillsData[category].forEach(skill => {
+        const skillEntry = document.createElement("div");
+        skillEntry.classList.add("skill-entry", "animate__animated", "animate__fadeInUp");
+
+        const skillIcon = document.createElement("img");
+        skillIcon.src = skill.icon;
+        skillIcon.alt = `${skill.name} logo`;
+        skillIcon.classList.add("skill-icon");
+
+        const skillName = document.createElement("span");
+        skillName.classList.add("skill-name");
+        skillName.textContent = skill.name;
+
+        skillEntry.appendChild(skillIcon);
+        skillEntry.appendChild(skillName);
+        modalBody.appendChild(skillEntry);
+      });
+
+      $('#skillModal').modal('show');
+    }
+  </script>
+
+</body>
+
+</html>
