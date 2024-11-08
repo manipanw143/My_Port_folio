@@ -1216,14 +1216,44 @@ a:hover {
 }
 
 .card-header-b .category-b {
-  font-size: .9rem;
-  background-color: #d6086b;
-  padding: .3rem .7rem;
-  color: #313131;
+  top: 54px;
+  left: 14px;
+  font-size: 0.9rem;
+  background-color: #24191e;
+  padding: 0.3rem 0.7rem;
+  color: #e4e4e4;
   letter-spacing: 0.030em;
   border-radius: 50px;
   text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
 }
+
+.card-header-b .category-b::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50px;
+  padding: 2px;
+  background: linear-gradient(90deg, #ff005e, #ff00c3, #ff00e6, #ff0000);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: animate-border 3s linear infinite;
+}
+
+@keyframes animate-border {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
 
 .card-header-b .title-2 {
   margin-bottom: 0;
