@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #d6086b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .contact-container {
+            max-width: 700px;
+            width: 100%;
+            background-color: #111;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-header h1 {
+            color: #d6086b;
+            font-size: 2em;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form label {
+            font-size: 1.1em;
+            color: #f1f1f1;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #333;
+            background: #222;
+            color: #d6086b;
+            font-size: 1em;
+            resize: none;
+            transition: border 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #d6086b;
+            outline: none;
+        }
+
+        .contact-form button {
+            padding: 8px;
+            background-color: #d6086b;
+            border: none;
+            color: #fff;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #b0075e;
+        }
+
+        /* Success Message */
+        .success-message {
+            text-align: center;
+            color: #0f0;
+            font-size: 1.2em;
+            display: none;
+            margin-top: 20px;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            text-align: center;
+            margin-top: 30px;
+            color: #f1f1f1;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        /* Social Media Links */
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-media a {
+            color: #d6086b;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+
+        .social-media a:hover {
+            color: #b0075e;
+        }
+
+        .animated-text {
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            animation: pulse 1.5s infinite;
+        }
+
+        .name_text {
+            width: 100%;
+            float: left;
+            font-size: 24px;
+            color: #071570;
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .contact-container {
+                padding: 20px;
+            }
+
+            .contact-header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="contact-container">
+    <div class="animated-text">
+        <h3 class="name_text">
+            <div class="text-container">
+                <span class="typing" id="text"></span>
+              </div>
+        </h3>
+    </div>
+
+    <div class="contact-header">
+        <h1>Contact Me</h1>
+    </div>
+
+    <!-- Contact Form -->
+    <form class="contact-form" id="contactForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+        <div class="success-message" id="successMessage">Thank you! Your message has been sent.</div>
+    </form>
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+        <p>Name : Manish Panwar</p>
+        <p>Email: mani_pa_14@example.com</p>
+        <p>Follow me on:</p>
+        <div class="social-media">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</div>
+
+<script>
+    const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        // Here you would add form submission logic
+        // For demonstration, we'll just show a success message
+        successMessage.style.display = 'block';
+
+        // Clear form fields
+        form.reset();
+
+        // Hide message after a few seconds
+        setTimeout(() => {
+            successMessage.style.display = 'none';
+        }, 3000);
+    });
+
+    const texts = ["Get In Touch", "Get In Touch"];
+    let currentTextIndex = 0;
+    let textElement = document.getElementById("text");
+
+    function generateRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    function typeText() {
+        let currentText = texts[currentTextIndex];
+        let currentLength = 0;
+        textElement.textContent = ""; // Clear text
+        textElement.style.color = generateRandomColor(); // Change text color
+
+        // Loop through each character and type
+        let typingInterval = setInterval(() => {
+            textElement.textContent += currentText[currentLength];
+            currentLength++;
+            if (currentLength === currentText.length) {
+                clearInterval(typingInterval);
+                setTimeout(() => {
+                    deleteText(currentText);
+                }, 1000); // Wait before deleting the text
+            }
+        }, 100); // Speed of typing
+    }
+
+    function deleteText(currentText) {
+        let currentLength = currentText.length;
+        let deletingInterval = setInterval(() => {
+            textElement.textContent = currentText.slice(0, currentLength - 1);
+            currentLength--;
+            if (currentLength === 0) {
+                clearInterval(deletingInterval);
+                // Move to the next text
+                currentTextIndex = (currentTextIndex + 1) % texts.length;
+                typeText(); // Start typing next text
+            }
+        }, 50); // Speed of deleting
+    }
+
+    // Start the typing animation
+    typeText();
+</script>
+
+</body>
+</html>
