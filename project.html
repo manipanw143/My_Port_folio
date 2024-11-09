@@ -26,12 +26,7 @@
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-    Theme Name: EstateAgency
-    Theme URL: https://bootstrapmade.com/real-estate-agency-bootstrap-template/
-    Author: BootstrapMade.com
-    License: https://bootstrapmade.com/license/
-  ======================================================= -->
+
 </head>
 <style>
   
@@ -91,6 +86,106 @@
       padding: 20px 10px;
       text-align: center;
     }
+
+  
+.footer {
+  background-color: #151313;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  padding: 40px 0;
+}
+
+.contact-info {
+  padding: 40px 0;
+}
+
+.footer-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #d90d65; /* Accent color */
+}
+
+.footer p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer .container {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer .footer-section {
+  margin-bottom: 20px;
+}
+
+.footer .footer-section a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer .footer-section a:hover {
+  text-decoration: underline;
+  color: #d90d65; /* Accent color */
+}
+
+/* Social Media Links */
+.social-links {
+  margin-top: 20px;
+}
+
+.social-links a {
+  color: #fff;
+  font-size: 20px;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: #d90d65; /* Accent color */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  background-color: #0f0d0d;
+  padding: 20px 0;
+}
+
+.footer .footer-text {
+  font-size: 14px;
+}
+
+.fas{
+  color: #d90d65;
+}
+
+.footer .footer-bottom a {
+  color: #d90d65;
+  text-decoration: none;
+}
+
+.footer .footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+.footer hr {
+  border-top: 1px solid #444;
+  margin: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer .container {
+    padding: 0 20px;
+  }
+
+  .footer .social-links a {
+    font-size: 25px;
+  }
+}
+
 </style>
 <body>
 
@@ -100,7 +195,8 @@
   
   
   <div class="tabs ">
-    <button class="tab active" onclick="filterProjects('all')">All</button>
+    <button class="tab active" onclick="filterProjects('all')">
+        All</button>
     <button class="tab" onclick="filterProjects('company')">Company</button>
     <button class="tab" onclick="filterProjects('personal')">Personal</button>
   </div>
@@ -474,8 +570,42 @@
  
   <!--/ Footer End /-->
 
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-  <div id="preloader"></div>
+  <!-- <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <div id="preloader"></div> -->
+
+
+
+  <footer class="footer">
+    <!-- Contact Information Section -->
+    <div class="container contact-info">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3 class="footer-title">Contact Info</h3>
+          <p><i class="fas fa-user"></i> Manish Panwar</p>
+          <p><i class="fas fa-envelope"></i> Email: <a href="mailto:your.email@example.com">mani_pa_14@example.com</a></p>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Full Width Footer Content -->
+    <div class="footer-bottom">
+      <div class="container">
+        <!-- Social Media Links -->
+        <div class="social-links">
+          <a href="https://www.linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+          <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+  
+        <!-- Footer Bottom -->
+        <hr>
+        <p class="footer-text">&copy; Copyright All Rights Reserved 2024 </p>
+        <p>Developed by <a href="https://yourwebsite.com" target="_blank">Manish</a></p>
+      </div>
+    </div>
+  </footer>
+
 
   <!-- JavaScript Libraries -->
   <script src="lib/jquery/jquery.min.js"></script>
