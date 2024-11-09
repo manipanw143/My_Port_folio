@@ -653,7 +653,7 @@ button {
     font-size: 24px;
     color: #d6086b;
     font-weight: bold;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 
 .dolor_text {
