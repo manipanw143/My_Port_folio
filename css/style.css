@@ -120,12 +120,12 @@ a:hover {
 }
 
 .link-a:hover {
-  color: #ffffff;
+  color: #020202;
   text-decoration: none;
 }
 
 .link-a span {
-  font-size: 18px;
+  font-size: 14px;
   vertical-align: middle;
   margin-left: 5px;
 }
@@ -1740,6 +1740,7 @@ footer .credits {
   .intro .intro-title {
     font-size: 3.5rem;
   }
+  
 
   .intro .intro-subtitle.intro-price {
     font-size: 1.3rem;
@@ -1769,11 +1770,11 @@ footer .credits {
 
 @media (min-width: 768px) {
   .link-a {
-    font-size: .9rem;
+    font-size: 0.5rem;
   }
 
   .link-a span {
-    font-size: 1.5rem;
+    font-size: 0.5rem;
   }
 
   .navbar-default.navbar-trans .nav-item,
@@ -1933,7 +1934,7 @@ footer .credits {
 
 @media (min-width: 992px) {
   .link-a {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   .link-a span {
