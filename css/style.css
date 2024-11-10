@@ -1087,13 +1087,15 @@ a:hover {
 }
 
 .card-header-a .card-title-a {
-  color: #ffffff;
+  color: black;
+  font-weight: bold;
   margin-bottom: 0;
   padding-bottom: .7rem;
 }
 
 .card-header-a .card-title-a a {
-  color: #ffffff;
+  color: blue;
+  font-weight: bold;
   text-decoration: none;
 }
 
