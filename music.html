@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Details</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* Basic styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #3c3333;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 16px; /* Base font size */
+    }
+
+    .project-details-container {
+      width: 80%;
+      max-width: 950px;
+      margin-top: 5px;
+      background-color: #040101;
+      padding: 5px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      margin: auto;
+    }
+
+    /* 3D Border effect and fixed size for images */
+    .mySlides img {
+      width: 55%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+      border: 2px solid #dd058d;
+      z-index: -1;
+      display: flex;
+      justify-self: center;
+    }
+
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* Dots/bullets/indicators */
+    .project-logo {
+      margin-bottom: 20px;
+    }
+
+    .project-logo img {
+      width: 80px;
+      height: auto;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .active {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+
+    /* Section Styles */
+    .content-section {
+      margin-top: 10px;
+      padding: 4px;
+      background-color: #090808;
+      border-left: 5px solid #d30476;
+      border-radius: 5px;
+    }
+
+    .content-section h2 {
+      color: white;
+    }
+
+    .content-section p, .content-section ul {
+      color: hwb(324 91% 5%);
+    }
+
+    /* Responsive Styles for Mobile */
+    @media (max-width: 768px) {
+      body {
+        font-size: 14px;
+      }
+      
+      .project-logo img {
+        width: 20px; /* Smaller logo size on mobile */
+      }
+
+      .mySlides img {
+        width: 80%; /* Smaller slide images on mobile */
+      }
+
+      .content-section h2 {
+        font-size: 1.2em;
+      }
+
+      .content-section p, .content-section ul {
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="project-details-container">
+    <!-- Project Logo Section -->
+    <div class="project-logo">
+      <img src="./img/music.png" alt="Emeelan Logo">
+    </div>
+    
+    <!-- Image Slider -->
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="./img/m_s.png" alt="Slide 2">
+      </div>
+      <div class="mySlides fade">
+        <img src="./img/m_3.png" alt="Slide 3">
+      </div>
+      <div class="mySlides fade">
+        <img src="./img/m_t.png" alt="Slide 1">
+      </div>
+    </div>
+
+    <!-- Dots for slide indicators -->
+    <div style="text-align:center; margin-top: 10px;">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+
+    <!-- Project Content Sections -->
+    
+    <div id="music-website" class="content-section">
+        <h2>Music Website | HTML, CSS, JavaScript</h2>
+        <p>The aim of this project is to create a dynamic and user-friendly music website that serves as a platform for music lovers to discover, listen to, and engage with their favorite music content.</p>
+      </div>
+      
+      <div id="key-features" class="content-section">
+        <h2>Key Features:</h2>
+        <ul>
+          <li><strong>User Registration and Profiles:</strong> Allows users to register and create personalized profiles to manage their music preferences.</li>
+          <li><strong>Music Library:</strong> Provides a comprehensive library of songs, albums, and genres for users to explore.</li>
+          <li><strong>Artist Pages:</strong> Dedicated pages for artists, showcasing their discography and other relevant content.</li>
+          <li><strong>Social Interaction:</strong> Features for users to engage with music, such as liking songs, sharing content, and commenting.</li>
+          <li><strong>Mobile Compatibility:</strong> Designed to be fully responsive, offering an optimal experience on both desktop and mobile devices.</li>
+        </ul>
+      </div>
+      
+      <div id="frontend-development" class="content-section">
+        <h2>Frontend Development:</h2>
+        <ul>
+          <li><strong>HTML, CSS, and JavaScript:</strong> Utilized these technologies to build the frontend of the website, ensuring a clean and intuitive user interface.</li>
+          <li><strong>Responsiveness:</strong> Ensured that the website is fully responsive across all devices, with proper layout adjustments on mobile and desktop screens.</li>
+          <li><strong>Interactivity:</strong> Added interactivity to enhance user experience, including hover effects, dynamic content updates, and seamless transitions.</li>
+        </ul>
+      </div>
+      
+      
+
+  </div>
+
+  <!-- JavaScript for Slideshow -->
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+
+    function currentSlide(n) {
+      slideIndex = n - 1;
+      showSlides();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Details</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* Basic styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #3c3333;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 16px; /* Base font size */
+    }
+
+    .project-details-container {
+      width: 80%;
+      max-width: 950px;
+      margin-top: 5px;
+      background-color: #040101;
+      padding: 5px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      margin: auto;
+    }
+
+    /* 3D Border effect and fixed size for images */
+    .mySlides img {
+      width: 55%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+      border: 2px solid #dd058d;
+      z-index: -1;
+      display: flex;
+      justify-self: center;
+    }
+
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* Dots/bullets/indicators */
+    .project-logo {
+      margin-bottom: 20px;
+    }
+
+    .project-logo img {
+      width: 100px;
+      height: auto;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .active {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+
+    /* Section Styles */
+    .content-section {
+      margin-top: 10px;
+      padding: 4px;
+      background-color: #090808;
+      border-left: 5px solid #d30476;
+      border-radius: 5px;
+    }
+
+    .content-section h2 {
+      color: white;
+    }
+
+    .content-section p, .content-section ul {
+      color: hwb(324 91% 5%);
+    }
+
+    /* Responsive Styles for Mobile */
+    @media (max-width: 768px) {
+      body {
+        font-size: 14px;
+      }
+      
+      .project-logo img {
+        width: 60px; /* Smaller logo size on mobile */
+      }
+
+      .mySlides img {
+        width: 80%; /* Smaller slide images on mobile */
+      }
+
+      .content-section h2 {
+        font-size: 1.2em;
+      }
+
+      .content-section p, .content-section ul {
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="project-details-container">
+    <!-- Project Logo Section -->
+    <div class="project-logo">
+      <img src="./img/emeelan.jpg" alt="Emeelan Logo">
+    </div>
+    
+    <!-- Image Slider -->
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="./img/drow_1.png" alt="Slide 1">
+      </div>
+      <div class="mySlides fade">
+        <img src="./img/drow_2.jpg" alt="Slide 2">
+      </div>
+      <!-- <div class="mySlides fade">
+        <img src="./img/slide-1.jpg" alt="Slide 3">
+      </div> -->
+    </div>
+
+    <!-- Dots for slide indicators -->
+    <div style="text-align:center; margin-top: 10px;">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+
+    <!-- Project Content Sections -->
+    <div id="description" class="content-section">
+      <h2>Description</h2>
+      <p>This project is a comprehensive solution for Community Business and Emeelan Platform. I contributed as a core team member to enhance features and improve performance for this platform.</p>
+    </div>
+
+    <div id="features" class="content-section">
+      <h2>Features</h2>
+      <ul>
+        <li>Built a custom REST API that returns counts of Business Types for client-side tables, verified with Postman.</li>
+        <li>Optimized the Dashboard component to reduce landing page loading times and implemented pagination for all tables to enhance data retrieval efficiency based on page size and current page.</li>
+        <li>Created a service to import Pincode data into a PostgreSQL collection for streamlined access.</li>
+        <li>Cleaned and imported data from Excel to PostgreSQL for testing purposes.</li>
+      </ul>
+    </div>
+
+    <div id="tools" class="content-section">
+      <h2>Tools & Technology</h2>
+      <ul>
+        <li>HTML, CSS</li>
+        <li>React.js, Ant Design</li>
+        <li>Strapi (CMS)</li>
+        <li>PostgreSQL</li>
+        <li>Docker, Postman</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- JavaScript for Slideshow -->
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+
+    function currentSlide(n) {
+      slideIndex = n - 1;
+      showSlides();
+    }
+  </script>
+</body>
+</html>
