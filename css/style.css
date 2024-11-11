@@ -574,7 +574,7 @@ a:hover {
   padding-bottom: 28px;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  box-shadow: 1px 2px 15px #ec177e;
+  /* box-shadow: 0.5px 1px 1px #ec177e; */
 }
 
 .navbar-default .nav-search {
