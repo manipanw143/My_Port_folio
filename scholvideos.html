@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Display on Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f5f5f5;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .video-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      max-width: 250px;
+    }
+    video {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .control-button {
+      padding: 8px 12px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      background-color: #d50991;
+    }
+    .duration {
+      font-size: 16px;
+      color: #d50991;
+    }
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 600px) {
+      .video-container {
+        padding: 0 10px;
+      }
+      .control-button {
+        font-size: 14px;
+        padding: 6px 10px;
+      }
+      .duration {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- <h2>My Portfolio Video</h2> -->
+  
+  <!-- Video Player Container -->
+  <div class="video-container" id="videoContainer">
+    <!-- Directly linked video -->
+    <video id="myVideo" controls>
+      <source src="./videos/myvid.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Controls for Play/Pause and Duration -->
+    <div class="controls">
+      <button class="control-button" id="playPauseButton" onclick="togglePlayPause()">Play</button>
+      <!-- <span class="duration" id="videoDuration">00:00 / 00:00</span> -->
+    </div>
+  </div>
+
+  <script>
+    const video = document.getElementById('myVideo');
+    const playPauseButton = document.getElementById('playPauseButton');
+    const videoDuration = document.getElementById('videoDuration');
+
+    // Play or pause the video and update button text
+    function togglePlayPause() {
+      if (video.paused) {
+        video.play();
+        playPauseButton.textContent = 'Pause';
+      } else {
+        video.pause();
+        playPauseButton.textContent = 'Play';
+      }
+    }
+
+    // Update the displayed duration
+    function updateDuration() {
+      const currentMinutes = Math.floor(video.currentTime / 60).toString().padStart(2, '0');
+      const currentSeconds = Math.floor(video.currentTime % 60).toString().padStart(2, '0');
+      const totalMinutes = Math.floor(video.duration / 60).toString().padStart(2, '0');
+      const totalSeconds = Math.floor(video.duration % 60).toString().padStart(2, '0');
+      videoDuration.textContent = `${currentMinutes}:${currentSeconds} / ${totalMinutes}:${totalSeconds}`;
+    }
+
+    // Update duration display as video plays
+    video.addEventListener('timeupdate', updateDuration);
+
+    // Reset play/pause button when video ends
+    video.addEventListener('ended', () => {
+      playPauseButton.textContent = 'Play';
+    });
+  </script>
+</body>
+</html>
