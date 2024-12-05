@@ -182,10 +182,165 @@ const users = [
 // console.log(output)
 
 
-const array = [1,2,3,4];
+// const array = [1,2,3,4];
+// const output = array.map((x) => x*2)
+// console.log(output);
+
+
+// const array = [
+//     {"firstName":"Harish", "LastName": "Mu", "age":"52"},
+//     {"firstName":"Dinesh", "LastName": "Ra", "age":"46"},
+// ]
+
+// console.log(array);
+
+// const output = array.map(function(x){
+
+// return x.firstName
+// })
+
+// console.log(output);
+
+
+
+// const array = [1,2,3,4,5,6,8];
+
+// const EvenArray = array.filter(function(x){
+// if(x % 2 ===0)
+// return x;
+// })
+
+// console.log(EvenArray);
+
+
+
+// const arrar = [4,2,3,8];
+
+// const output = arrar.reduce(function(accu,curr){
+// if(curr < accu){
+// accu = curr;
+// }
+// return accu;
+// },Infinity)
+
+// console.log(output)
+
+
+// 1 :
+
+// function cb(x){
+// return x*2;
+// }
+
+// const array = [1,2,3,4,5];
+
+// const output = array.map(cb)
+
+// console.log(output);
+
+
+
+// 2 :
+
+// filter method is used to filter the aray with condition
+
+
+// const array = [2,4,3,1,8];
+
+// const EvenVales = array.filter(function(curr){
+// if(curr % 2 === 0 ){
+// return curr;
+// }
+// })
+
+// console.log(EvenVales);
 
 
 
 
 
+// 3 reduce
 
+// const array = [1,9,4,2];
+
+// const Maximum = array.reduce(function (acc, curr, index, array) {
+// return curr > acc ? curr : acc;
+// }, -Infinity)
+
+// console.log(Maximum)
+
+
+
+// const array = [1,9,0,4,2];
+
+// const Minimum = array.reduce(function (acc, curr, index, array) {
+// return curr < acc ? curr : acc;
+// }, Infinity)
+
+// console.log(Minimum)
+
+
+
+
+// function hello(name){
+//     return `Hello, ${name}!`;
+// }
+
+
+// function processUserInput(callback){
+//   const name = "Alice";
+//   return callback(name);
+// }
+
+// const output = processUserInput(hello);
+// console.log(output);
+
+
+// let a = 9
+// var a = 10
+
+// console.log(a)
+
+
+// const a = 4;
+// const b;
+// const b = 4;
+
+// let a = 10;
+// // console.log(a)
+// {
+//     var a = 4;
+//     console.log(a)
+// }
+
+
+
+// console.log(b);
+
+
+
+// let obj = {
+
+// }
+
+// obj();
+
+// const a;
+// a = 4;
+
+
+// let a;
+// a = 4;
+
+
+
+
+
+function a(){
+    function b(){   
+    }
+}
+
+let b = () => {
+    
+}
